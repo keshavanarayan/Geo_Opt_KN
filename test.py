@@ -7,3 +7,5 @@ for i in range(10):
         grid.append(rg.Point3d (i,j,0))
 
 a = grid
+
+print "This is a test"
