@@ -105,7 +105,7 @@ for i in range(len(m.Faces)):
     nurbscurve=rg.Curve.JoinCurves(nurbsline)[0]
     k.append(nurbscurve)
 
-
+#paramtric transformable mesh that reacts with the sun vector and moves according to the vector
 l=[]
 for i in range(len(m.Faces)):
     list=[]
