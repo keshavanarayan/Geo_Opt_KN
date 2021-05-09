@@ -105,6 +105,7 @@ for i in range(len(m.Faces)):
     nurbscurve=rg.Curve.JoinCurves(nurbsline)[0]
     k.append(nurbscurve)
 
+
 #paramtric transformable mesh that reacts with the sun vector and moves in height according to the vector
 l=[]
 for i in range(len(m.Faces)):
@@ -113,5 +114,7 @@ for i in range(len(m.Faces)):
     curve=k[i]
     list.append(circle)
     list.append(curve)
+    t_p=rg.Curve.ClosestPoint(circle,rg.Curve.PointAt(curve,0),5)[1]
+    rg.Curve.ChangeClosedCurveSeam(circle,t_p)
     one=rg.Brep.CreateFromLoft(list,rg.Point3d.Unset, rg.Point3d.Unset, rg.LoftType.Normal, False)[0]
     l.append(one)
